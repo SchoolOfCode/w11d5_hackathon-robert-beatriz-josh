@@ -1,14 +1,16 @@
-import React from 'react'
+import React from "react";
 
-
-
-export default function GameList({name, price, image}) {
-
-
-  return (<div>
-  <h1>{name}</h1>
-  <img src= {image} alt = "picture of the game"/>
-  <h3>{price}</h3>
-
-  </div>);
+export default function GameList({ text }) {
+  return (
+    <div>
+      {text.map((item) => {
+        return (
+          <div>
+            <h1>{item.title}</h1>
+            <img src={item.thumb} /> <h3>{item.cheapest}</h3>
+          </div>
+        );
+      })}
+    </div>
+  );
 }

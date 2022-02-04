@@ -4,7 +4,6 @@ import { Login } from "../Login";
 import { useAuth0 } from "@auth0/auth0-react";
 import Navbar from "../navbar/header.js";
 import { useState } from "react";
-import {GameList} from "../GameList"
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -23,20 +22,32 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* {isAuthenticated ? ( */}
-      <main>
-        {/* <Login /> */}
-        <h1>Welcome to the page</h1>
-        <Input onSubmit={fetchGame} />
-        <div>
-          {text.map((gameItems, index)=>{ return (<GameList name={gameItems.external} image= {gameItems.thumb} price={gameItems.cheapest} key={index}
-
-          />) }  )}
-        </div>
-      </main>
-      {/*  ( */}
-      {/* <Login /> */}
-      {/* )} */}
+      {isAuthenticated ? (
+        <main>
+          <Login />
+          <h1>Welcome to the page</h1>
+          <Input onSubmit={fetchGame} />
+          <div>
+            {/* {/* <h2>{text.external}</h2> */}
+            <h2>{text.external}</h2>
+            <h3>The cheapest price for this is £{text.cheapest}</h3>
+            <img src={text.thumb} alt="game image" />
+            {/* <GameList text={text} /> */}
+            {/* {text.map((gameItems, index) => {
+            return (
+              <GameList
+                name={gameItems.external}
+                image={gameItems.thumb}
+                price={gameItems.cheapest}
+                key={index}
+              />
+            );
+          })} */}
+          </div>
+        </main>
+      ) : (
+        <Login />
+      )}
     </div>
   );
 }
