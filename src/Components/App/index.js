@@ -1,6 +1,6 @@
 import "./App.css";
 import Input from "../Input";
-import { Login } from "../Login";
+import Login from "../Login";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 
