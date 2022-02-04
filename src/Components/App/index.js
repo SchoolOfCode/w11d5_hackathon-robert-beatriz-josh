@@ -27,6 +27,7 @@ function App() {
           <Login />
           <h1>Welcome to the page</h1>
           <Input onSubmit={fetchGame} />
+          <div>{text}</div>
         </main>
       ) : (
         <Login />
