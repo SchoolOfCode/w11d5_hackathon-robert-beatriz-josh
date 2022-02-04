@@ -1,4 +1,5 @@
 import "./App.css";
+import Input from "../Input";
 import { Login } from "../Login";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -11,6 +12,7 @@ function App() {
         <main>
           <Login />
           <h1>Welcome to the page</h1>
+          <Input />
         </main>
       ) : (
         <Login />
