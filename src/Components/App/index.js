@@ -15,23 +15,27 @@ function App() {
       // `https://swapi.dev/api/people?search=${game}`
     );
     let data = await response.json();
-    setText(data);
-    console.log(data, text, "is this");
+    setText(data[0]);
+    console.log(data[0], "is this");
   }
 
   return (
     <div className="App">
       <Navbar />
-      {isAuthenticated ? (
-        <main>
-          <Login />
-          <h1>Welcome to the page</h1>
-          <Input onSubmit={fetchGame} />
-          <div>The thing is {text}</div>
-        </main>
-      ) : (
-        <Login />
-      )}
+      {/* {isAuthenticated ? ( */}
+      <main>
+        {/* <Login /> */}
+        <h1>Welcome to the page</h1>
+        <Input onSubmit={fetchGame} />
+        <div>
+          <h2>{text.external}</h2>
+          <h3>£{text.cheapest}</h3>
+          <img src={text.thumb} />
+        </div>
+      </main>
+      {/*  ( */}
+      {/* <Login /> */}
+      {/* )} */}
     </div>
   );
 }
