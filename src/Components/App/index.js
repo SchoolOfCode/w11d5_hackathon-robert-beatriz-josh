@@ -9,9 +9,9 @@ function App() {
   const { isAuthenticated } = useAuth0();
   const [text, setText] = useState();
 
-  async function fetchGame() {
+  async function fetchGame(game) {
     let data = await fetch(
-      `https://www.cheapshark.com/api/1.0/games?title=${text}`
+      `https://www.cheapshark.com/api/1.0/games?title=${game}`
     );
     let fetchInfo = await data.json();
     setText(fetchInfo);
@@ -19,7 +19,7 @@ function App() {
   }
   useEffect(() => {
     fetchGame();
-  }, [text]);
+  }, [game]);
   return (
     <div className="App">
       <Navbar />
