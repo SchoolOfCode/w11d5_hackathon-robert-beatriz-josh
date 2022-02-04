@@ -11,7 +11,7 @@ function App() {
 
   async function fetchGame(game) {
     let data = await fetch(
-      `https://www.cheapshark.com/api/1.0/games?title=${game}`
+      `https://boiling-bayou-41448.herokuapp.com/https://www.cheapshark.com/api/1.0/games?title=${game}`
     );
     let fetchInfo = await data.json();
     setText(fetchInfo);
