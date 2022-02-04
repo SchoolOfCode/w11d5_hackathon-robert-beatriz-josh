@@ -11,7 +11,9 @@ export const Login = () => {
         <Button
           type="primary"
           onClick={() => logout({ returnTo: window.location.origin })}
-        ></Button>
+        >
+          Log out
+        </Button>
       ) : (
         <div>
           {" "}
