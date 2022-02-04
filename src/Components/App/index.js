@@ -9,9 +9,9 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       {isAuthenticated ? (
         <main>
-          <Navbar />
           <Login />
           <h1>Welcome to the page</h1>
           <Input />
