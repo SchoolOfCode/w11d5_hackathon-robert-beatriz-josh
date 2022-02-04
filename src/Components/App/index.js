@@ -19,7 +19,7 @@ function App() {
   }
   useEffect(() => {
     fetchGame();
-  });
+  }, [text]);
   return (
     <div className="App">
       <Navbar />
