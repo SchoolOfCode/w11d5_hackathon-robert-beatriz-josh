@@ -3,7 +3,7 @@ import Input from "../Input";
 import { Login } from "../Login";
 import { useAuth0 } from "@auth0/auth0-react";
 import Navbar from "../navbar/header.js";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -15,7 +15,7 @@ function App() {
     );
     let fetchInfo = await data.json();
     setText(fetchInfo);
-    console.log(fetchInfo);
+    console.log(text);
   }
 
   return (
