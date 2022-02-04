@@ -17,9 +17,7 @@ function App() {
     setText(fetchInfo);
     console.log(fetchInfo);
   }
-  useEffect(() => {
-    fetchGame();
-  }, [game]);
+
   return (
     <div className="App">
       <Navbar />
