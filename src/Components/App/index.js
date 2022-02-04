@@ -13,7 +13,7 @@ function App() {
     let data = await fetch(
       `https://www.cheapshark.com/api/1.0/games?title=${text}`
     );
-    let fetchInfo = await data.json;
+    let fetchInfo = await data.json();
     setText(fetchInfo);
     console.log(fetchInfo);
   }
