@@ -31,7 +31,7 @@ function App() {
             {/* {/* <h2>{text.external}</h2> */}
             <h2>{text.external}</h2>
             <h3>The cheapest price for this is £{text.cheapest}</h3>
-            <img src={text.thumb} />
+            <img src={text.thumb} alt="" />
             {/* <GameList text={text} /> */}
             {/* {text.map((gameItems, index) => {
             return (
