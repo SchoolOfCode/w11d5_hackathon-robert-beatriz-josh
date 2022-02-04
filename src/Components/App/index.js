@@ -4,6 +4,7 @@ import { Login } from "../Login";
 import { useAuth0 } from "@auth0/auth0-react";
 import Navbar from "../navbar/header.js";
 import { useState } from "react";
+import {GameList} from "../GameList"
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -28,9 +29,9 @@ function App() {
         <h1>Welcome to the page</h1>
         <Input onSubmit={fetchGame} />
         <div>
-          <h2>{text.external}</h2>
-          <h3>£{text.cheapest}</h3>
-          <img src={text.thumb} />
+          {text.map((gameItems, index)=>{ return (<GameList name={gameItems.external} image= {gameItems.thumb} price={gameItems.cheapest} key={index}
+
+          />) }  )}
         </div>
       </main>
       {/*  ( */}
