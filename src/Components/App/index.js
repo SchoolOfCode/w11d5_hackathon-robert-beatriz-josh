@@ -10,13 +10,13 @@ function App() {
   const [text, setText] = useState();
 
   async function fetchGame(game) {
-    let data = await fetch(
-      // `https://www.cheapshark.com/api/1.0/games?title=${game}`
-      `https://swapi.dev/api/people?search=${game}`
+    let response = await fetch(
+      `https://www.cheapshark.com/api/1.0/games?title=${game}`
+      // `https://swapi.dev/api/people?search=${game}`
     );
-    let fetchInfo = await data.json();
-    setText(fetchInfo);
-    console.log(fetchInfo, text, "is this");
+    let data = await response.json();
+    setText(data);
+    console.log(data, text, "is this");
   }
 
   return (
@@ -27,7 +27,7 @@ function App() {
           <Login />
           <h1>Welcome to the page</h1>
           <Input onSubmit={fetchGame} />
-          <div>{text}</div>
+          <div>The thing is {text}</div>
         </main>
       ) : (
         <Login />
