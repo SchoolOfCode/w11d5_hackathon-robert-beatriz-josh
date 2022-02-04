@@ -16,7 +16,7 @@ function App() {
     );
     let fetchInfo = await data.json();
     setText(fetchInfo);
-    console.log(text);
+    console.log(fetchInfo, text, "is this");
   }
 
   return (
