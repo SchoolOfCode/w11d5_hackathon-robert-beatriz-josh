@@ -17,7 +17,7 @@ export const Login = () => {
       ) : (
         <div>
           {" "}
-          {/* <h1>Please log in to view our awesome games page</h1> */}
+          <h1>Please log in to view our awesome games page</h1>
           <Button type="primary" onClick={() => loginWithRedirect()}>
             Log in
           </Button>
